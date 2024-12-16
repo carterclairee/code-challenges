@@ -59,4 +59,27 @@ function compareTriplets(a, b) {
     return [score1, score2]
 }
 
-console.log(compareTriplets(alice, bob));
+// console.log(compareTriplets(alice, bob));
+
+/*
+3.
+In this challenge, you are required to calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+
+Function Description
+
+Complete the aVeryBigSum function in the editor below. It must return the sum of all array elements.
+
+aVeryBigSum has the following parameter(s):
+int ar[n]: an array of integers .
+
+Return
+long: the sum of all array elements
+*/
+
+const sample = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005];
+
+function aVeryBigSum(ar) {
+    return ar.reduce((acc, cur) => acc + cur);
+}
+
+console.log(aVeryBigSum(sample));
