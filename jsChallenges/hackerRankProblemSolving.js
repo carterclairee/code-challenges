@@ -82,4 +82,52 @@ function aVeryBigSum(ar) {
     return ar.reduce((acc, cur) => acc + cur);
 }
 
-console.log(aVeryBigSum(sample));
+// console.log(aVeryBigSum(sample));
+
+/*
+4.
+Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+For example, the square matrix  is shown below:
+
+1 2 3
+4 5 6
+9 8 9  
+The left-to-right diagonal = 15. The right to left diagonal = 17. Their absolute difference is 2.
+
+Function description
+
+Complete the function in the editor below.
+
+diagonalDifference takes the following parameter:
+
+int arr[n][m]: an array of integers
+Return
+
+int: the absolute diagonal difference
+
+1 2 3 4
+4 5 6 5
+9 8 9 6  
+1 2 3 4
+*/
+
+const test = [[1, 2, 3], [4, 5, 6], [9, 8, 9]];
+const test2 = [[1, 2, 3, 4], [4, 5, 6, 5], [9, 8, 9, 6], [1, 2, 3, 4]];
+
+function diagonalDifference(arr) {
+    // l to r: ar0[0], ar1[1], ar2[2]
+    // r to l: ar0[2], ar1[1], ar2[0]
+
+    // initialize counting variables
+    let lr = 0;
+    let rl = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        lr += arr[i][i];
+        rl += arr[i][arr.length - i - 1];
+    }
+    return Math.abs(lr - rl);
+}
+
+console.log(diagonalDifference(test));
