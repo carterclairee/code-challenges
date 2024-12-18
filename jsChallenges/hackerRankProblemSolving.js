@@ -130,4 +130,4 @@ function diagonalDifference(arr) {
     return Math.abs(lr - rl);
 }
 
-console.log(diagonalDifference(test));
+// console.log(diagonalDifference(test));
