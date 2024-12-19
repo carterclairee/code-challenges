@@ -9,11 +9,21 @@ Example: A=[1,2,3] Return [3,2,1]
 
 const example = [1, 2, 3];
 
+// function reverseArray(a) {
+//     return a.reverse();
+// }
+
+// Without reverse method, jff:
 function reverseArray(a) {
-    return a.reverse();
+    let result = [];
+
+    for (let i = a.length -1; i >= 0; i--) {
+        result.push(a[i]);
+    }
+    return result;
 }
 
-// console.log(reverseArray(example));
+console.log(reverseArray(example));
 
 /*
 2. 2D Array - DS
@@ -63,10 +73,10 @@ function hourglassSum(arr) {
                 // update the max sum
                 maxSum = Math.max(maxSum, hourglassSum);
             }
-    }
+        }
 
     // Return the maximum hourglass sum
     return maxSum;
 }
 
-console.log(hourglassSum(sample));
+// console.log(hourglassSum(sample));
